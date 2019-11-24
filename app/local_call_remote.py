@@ -5,7 +5,7 @@ import glob
 sys.path.append('gen-py')
 #sys.path.insert(0, glob.glob('../../lib/py/build/lib*')[0])
 
-from service import Remote
+from serv import Remote
 #from tutorial.ttypes import InvalidOperation, Operation
 
 #from shared.ttypes import SharedStruct
@@ -18,7 +18,7 @@ from thrift.protocol import TBinaryProtocol
 
 def main():
     # Make socket
-    transport = TSocket.TSocket('localhost', 9090)
+    transport = TSocket.TSocket('172.17.0.2', 9090)
 
     # Buffering is critical. Raw sockets are very slow
     transport = TTransport.TBufferedTransport(transport)
